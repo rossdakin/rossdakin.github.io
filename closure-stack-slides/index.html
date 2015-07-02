@@ -1,0 +1,398 @@
+<!--
+Google IO 2012 HTML5 Slide Template
+
+Authors: Eric Bidelman <ebidel@gmail.com>
+         Luke Mahé <lukem@google.com>
+
+URL: https://code.google.com/p/io-2012-slides
+-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Closure Tools</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">-->
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+  <!--This one seems to work all the time, but really small on ipad-->
+  <!--<meta name="viewport" content="initial-scale=0.4">-->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="stylesheet" media="all" href="theme/css/default.css">
+  <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="theme/css/phone.css">
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
+  <script data-main="js/slides" src="js/require-1.0.8.min.js"></script>
+
+<!-- start Mixpanel --><script type="text/javascript">(function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");
+for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===e.location.protocol?"https:":"http:")+'//cdn.mxpnl.com/libs/mixpanel-2.2.min.js';f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f)}})(document,window.mixpanel||[]);
+mixpanel.init("d637de4f94a02eaf0749522e62991981");
+
+var params = {
+  "Site": "rossdak.in",
+  "Page": "Closure Stack Slides",
+  "Referrer": document.referrer
+};
+
+window.mixpanelInterval = window.setInterval(function() {
+  if (!window.mixpanelInterval || !mixpanel.__loaded)
+    return;
+
+  window.clearInterval(window.mixpanelInterval);
+  window.mixpanelInterval = null;
+
+  var id = mixpanel.get_distinct_id();
+
+  if (id == "14543ba2a1323e-0f8f6593e-1815425d-13c680-14543ba2a144d0")
+    id = "Ross";
+
+  mixpanel.identify(id);
+  mixpanel.people.set_once('$name', id);
+  mixpanel.people.set_once('$username', id);
+  mixpanel.people.set_once('First Seen', new Date());
+  mixpanel.people.increment('Page Views');
+
+  mixpanel.register({ "mp_name_tag": id });
+
+  mixpanel.track_links("a", "Link Clicked", params);
+  mixpanel.track("Page View", params);
+
+}, 100);
+
+</script><!-- end Mixpanel -->
+</head>
+<body style="opacity: 0">
+
+<slides class="layout-widescreen">
+
+  <slide class="logoslide nobackground">
+    <article class="flexbox vcenter">
+      <span><img src="images/google_developers_logo.png"></span>
+    </article>
+  </slide>
+
+  <slide class="title-slide segue nobackground">
+    <aside class="gdbar"><img src="images/google_developers_icon_128.png"></aside>
+    <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
+    <hgroup class="auto-fadein">
+      <h1 data-config-title><!-- populated from slide_config.json --></h1>
+      <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
+      <p data-config-presenter><!-- populated from slide_config.json --></p>
+    </hgroup>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>About Me</h2>
+      <h3>I am...</h3>
+    </hgroup>
+    <article>
+      <ul class="build">
+        <li>Developer</li>
+        <li>San Diego</li>
+        <li>Vorstack Corporation (1 year)</li>
+        <li>JavaScript apps (5 years)</li>
+        <li>Slightly OCD
+          <ul>
+            <li>Optimization</li>
+            <li>Documentation</li>
+            <li>Best practices</li>
+            <li>etc.</li>
+          </ul>
+        </li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Disclaimer</h2>
+      <h3>I am not...</h3>
+    </hgroup>
+    <article>
+      <ul class="build">
+        <li>An expert at pretty much anything in this presentation.</li>
+        <li style="color: #fff;">
+          <ul style="color: #797979;">
+            <li>Optimization</li>
+            <li>Documentation</li>
+            <li>Best practices</li>
+            <li>JavaScript</li>
+            <li>Closure tools</li>
+            <li>Make</li>
+            <li>Build systems</li>
+            <li>Deployment methodologies</li>
+            <li>Software versioning</li>
+            <li>etc.</li>
+          </ul>
+        </li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Overview</h2>
+      <h3>Supports</h3>
+    </hgroup>
+    <article>
+      <ul>
+        <li>Closure Linter</li>
+        <li>Closure Compiler</li>
+        <li>Closure Library</li>
+        <li>Closure Templates</li>
+        <li>Documentation
+          <ul>
+            <li>jsdoc-toolkit (now)</li>
+            <li>jsdoc3 (eventually)</li>
+          </ul>
+        </li>
+        <li>Google JS Test (soon)</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Overview</h2>
+      <h3>Extras</h3>
+    </hgroup>
+    <article>
+      <ul>
+        <li>Manifest</li>
+        <li>Symbol maps</li>
+        <li>Source map</li>
+        <li>Dependencies file</li>
+        <li>Easy updating</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Overview</h2>
+      <h3>Real Targets</h3>
+    </hgroup>
+    <article>
+      <ul>
+        <li>clean</li>
+        <li>deps: generates deps.js file for on-the-fly source loading</li>
+        <li>docs: generated JSDoc</li>
+        <li>manifest: generates list of all files to include in build, in dependency order</li>
+        <li>source-map: generates a source map</li>
+        <li>source-map-assets: copies relevant source code to the output directory</li>
+        <li>soy: generates JavaScript from .soy template files</li>
+        <li>test: runs tests</li>
+        <li>type-check: runs static type checks</li>
+        <li>update: updates libraries used</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Overview</h2>
+      <h3>Phony Targets</h3>
+    </hgroup>
+    <article>
+      <ul>
+        <li>all
+        <ul>
+          <li>lint</li>
+          <li>type-check</li>
+          <li>build</li>
+          <li>docs</li>
+        </ul>
+        </li>
+        <li>dev
+        <ul>
+          <li>lint</li>
+          <li>deps</li>
+          <li>build</li>
+          <li>source-map, source-map-assets</li>
+          <li>DEBUG=true</li>
+        </ul>
+        </li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide class="segue dark nobackground">
+    <aside class="gdbar"><img src="images/google_developers_icon_128.png"></aside>
+    <hgroup class="auto-fadein">
+      <h2>Quick Demo</h2>
+      <h3>Date</h3>
+    </hgroup>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Use Cases</h2>
+    </hgroup>
+    <article>
+      <ul>
+        <li>Build full standalone library
+          <ul>
+            <li>exports on</li>
+            <li>namespaces off</li>
+          </ul>
+        </li>
+        <li>Build partial standalone library
+          <ul>
+            <li>exports on</li>
+            <li>namespaces on</li>
+          </ul>
+        </li>
+        <li>Build full application
+          <ul>
+            <li>exports off</li>
+            <li>namespaces off</li>
+          </ul>
+        </li>
+        <li>Build partial application
+          <ul>
+            <li>exports off</li>
+            <li>namespaces on</li>
+          </ul>
+        </li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide class="segue dark nobackground">
+    <aside class="gdbar"><img src="images/google_developers_icon_128.png"></aside>
+    <hgroup class="auto-fadein">
+      <h2>Example</h2>
+      <h3>XpcXhr</h3>
+    </hgroup>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>XpcXhr</h2>
+      <h3>Description</h3>
+    </hgroup>
+    <article>
+      <ul class="build">
+        <li>Replaces XHR</li>
+        <li>Standalone library</li>
+        <li>Implemented using Closure Library</li>
+        <li>Allows:
+          <ul>
+            <li>Cross Origin</li>
+            <li>Cross Browser</li>
+            <li>All REST verbs</li>
+          </ul>
+        </li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>XpcXhr</h2>
+      <h3>Motivation</h3>
+    </hgroup>
+    <article>
+      <table>
+        <tr>
+          <th></th><th>All REST Verbs</th><th>Cross Origin</th><th>Cross Browser</th><th>Server Mods</th>
+        </tr>
+        <tr>
+          <td>XHR</td><td>yes</td><td class="highlight">no</td><td>yes</td><td>no</td>
+        </tr>
+        <tr>
+          <td>XHR2</td><td>yes</td><td>yes</td><td class="highlight">no</td><td>no</td>
+        </tr>
+        <tr>
+          <td>Browser Ext.</td><td>yes</td><td>yes</td><td class="highlight">no</td><td>no</td>
+        </tr>
+        <tr>
+          <td>XHR + CORS</td><td>yes</td><td>yes</td><td class="highlight">no</td><td class="highlight">yes</td>
+        </tr>
+        <tr>
+          <td>JSONP</td><td class="highlight">no</td><td>yes</td><td>yes</td><td class="highlight">yes</td>
+        </tr>
+        <tr>
+          <td>XpcXhr</td><td>yes</td><td>yes</td><td>yes</td><td class="highlight">yes</td>
+        </tr>
+      </table>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>XpcXhr</h2>
+      <h3>Architecture</h3>
+    </hgroup>
+    <article class="flexbox vcenter">
+      <img src="images/xpcxhr-architecture.png" class="reflect" alt="XpcXhr Architecture" title="XpcXhr Architecture">
+    </article>
+  </slide>
+
+  <slide class="segue dark nobackground">
+    <aside class="gdbar"><img src="images/google_developers_icon_128.png"></aside>
+    <hgroup class="auto-fadein">
+      <h2>Demo</h2>
+      <h3>XpcXhr</h3>
+    </hgroup>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Summary</h2>
+      <h3>Drawbacks</h3>
+    </hgroup>
+    <article>
+      <ul>
+        <li>No real-time updating (e.g. Plovr)</li>
+        <li>Assumes use of Closure Library</li>
+        <li>No built-in versioning</li>
+        <li>No built-in repo support (e.g. tag upon build)</li>
+        <li>No built-in i18n in templates</li>
+        <li>Docs are a bit hacky (must generate JSDoc tags for parent namespaces)</li>
+        <li>Type checking is slow/hacky (must check entire Closure Library)</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Summary</h2>
+      <h3>Benefits</h3>
+    </hgroup>
+    <article>
+      <ul>
+        <li>Lightweight</li>
+        <li>Common prereq's</li>
+        <li>Fairly comprehensive</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide class="thank-you-slide segue nobackground">
+    <aside class="gdbar right"><img src="images/google_developers_icon_128.png"></aside>
+    <article class="flexbox vleft auto-fadein">
+      <h2>Thanks!</h2>
+      <p>Questions?</p>
+    </article>
+    <p class="auto-fadein" data-config-contact>
+      <!-- populated from slide_config.json -->
+    </p>
+  </slide>
+
+  <slide class="logoslide dark nobackground">
+    <article class="flexbox vcenter">
+      <span><img src="images/google_developers_logo_white.png"></span>
+    </article>
+  </slide>
+
+  <slide class="backdrop"></slide>
+
+</slides>
+
+<!--[if IE]>
+  <script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+  <script>CFInstall.check({mode: 'overlay'});</script>
+<![endif]-->
+
+</body>
+</html>
