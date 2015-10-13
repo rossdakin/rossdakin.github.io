@@ -4,8 +4,8 @@ title: About
 permalink: /about/
 ---
 
-Hi, I'm Ross
+Hi,
 
-This will soon be my little corner of the web.
+This is my little corner of the web.
 
-—rd
+—Ross
