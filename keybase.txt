@@ -1,0 +1,55 @@
+==================================================================
+https://keybase.io/rossdakin
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://www.rossdak.in
+  * I am rossdakin (https://keybase.io/rossdakin) on keybase.
+  * I have a public key ASB4UWf9hudZqCLvU3nToGmAy9XaVzxlC919EBX6vWTH_wo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120785167fd86e759a822ef5379d3a06980cbd5da573c650bdd7d1015fabd64c7ff0a",
+      "host": "keybase.io",
+      "kid": "0120785167fd86e759a822ef5379d3a06980cbd5da573c650bdd7d1015fabd64c7ff0a",
+      "uid": "15ea89997743e23df471ea44a9360d19",
+      "username": "rossdakin"
+    },
+    "merkle_root": {
+      "ctime": 1522779962,
+      "hash": "0413639c7a8b31b08ea57629f79efb49a5964c395f08b5db20f9eb6709e693eb0ac956dde9de3885d6dba1f08f56accfd09719bdd5f3c4ea9e0255dcd4c86ee8",
+      "hash_meta": "7e40d789e6c6a3fb4da45f701176007516151dae74a8a0023947cb356264f066",
+      "seqno": 2329491
+    },
+    "service": {
+      "hostname": "www.rossdak.in",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "1.0.45"
+  },
+  "ctime": 1522779987,
+  "expire_in": 504576000,
+  "prev": "c7609a265adbfec737e4ec58d240d1769fa5d74e9ade51b1db95bff4118b3d4a",
+  "seqno": 8,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgeFFn/YbnWagi71N506BpgMvV2lc8ZQvdfRAV+r1kx/8Kp3BheWxvYWTFA0d7ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTIwNzg1MTY3ZmQ4NmU3NTlhODIyZWY1Mzc5ZDNhMDY5ODBjYmQ1ZGE1NzNjNjUwYmRkN2QxMDE1ZmFiZDY0YzdmZjBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwNzg1MTY3ZmQ4NmU3NTlhODIyZWY1Mzc5ZDNhMDY5ODBjYmQ1ZGE1NzNjNjUwYmRkN2QxMDE1ZmFiZDY0YzdmZjBhIiwidWlkIjoiMTVlYTg5OTk3NzQzZTIzZGY0NzFlYTQ0YTkzNjBkMTkiLCJ1c2VybmFtZSI6InJvc3NkYWtpbiJ9LCJtZXJrbGVfcm9vdCI6eyJjdGltZSI6MTUyMjc3OTk2MiwiaGFzaCI6IjA0MTM2MzljN2E4YjMxYjA4ZWE1NzYyOWY3OWVmYjQ5YTU5NjRjMzk1ZjA4YjVkYjIwZjllYjY3MDllNjkzZWIwYWM5NTZkZGU5ZGUzODg1ZDZkYmExZjA4ZjU2YWNjZmQwOTcxOWJkZDVmM2M0ZWE5ZTAyNTVkY2Q0Yzg2ZWU4IiwiaGFzaF9tZXRhIjoiN2U0MGQ3ODllNmM2YTNmYjRkYTQ1ZjcwMTE3NjAwNzUxNjE1MWRhZTc0YThhMDAyMzk0N2NiMzU2MjY0ZjA2NiIsInNlcW5vIjoyMzI5NDkxfSwic2VydmljZSI6eyJob3N0bmFtZSI6Ind3dy5yb3NzZGFrLmluIiwicHJvdG9jb2wiOiJodHRwczoifSwidHlwZSI6IndlYl9zZXJ2aWNlX2JpbmRpbmciLCJ2ZXJzaW9uIjoxfSwiY2xpZW50Ijp7Im5hbWUiOiJrZXliYXNlLmlvIGdvIGNsaWVudCIsInZlcnNpb24iOiIxLjAuNDUifSwiY3RpbWUiOjE1MjI3Nzk5ODcsImV4cGlyZV9pbiI6NTA0NTc2MDAwLCJwcmV2IjoiYzc2MDlhMjY1YWRiZmVjNzM3ZTRlYzU4ZDI0MGQxNzY5ZmE1ZDc0ZTlhZGU1MWIxZGI5NWJmZjQxMThiM2Q0YSIsInNlcW5vIjo4LCJ0YWciOiJzaWduYXR1cmUifaNzaWfEQIR2rZ5lKR5a6EuyiPvJ/QwVgz8PUqqKkwG2p6PoEuQt5YzjsHVRg3uy4v06UvlTfp+ZYx91b2yOkl6lINpEbgCoc2lnX3R5cGUgpGhhc2iCpHR5cGUIpXZhbHVlxCAIYxoAztWe1HhX4xHhAlJLBLFILc0SlPayZI5K6Ya+jaN0YWfNAgKndmVyc2lvbgE=
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/rossdakin
+
+==================================================================
