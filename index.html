@@ -1,23 +1,53 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="en">
 
-<div class="home">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <h1 class="page-heading">Posts</h1>
+  <title>Ross Dakin</title>
 
-  <ul class="post-list">
-    {% for post in site.posts %}
+  <meta name="description" content="The personal homepage of Ross Dakin.">
+
+  <link rel="canonical" href="https://www.rossdak.in/">
+</head>
+
+
+<body>
+
+  <header>
+    <h1>Welcome!</h1>
+  </header>
+
+  <main>
+    <p>There's not much here. I intend to change that soon (in relative terms).</p>
+    <p>Meanwhile, I can be found here:</p>
+    <ul>
       <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
+        <a href="https://www.linkedin.com/in/rossdakin/">https://www.linkedin.com/in/rossdakin</a>
       </li>
-    {% endfor %}
-  </ul>
+      <li>
+        <a href="https://github.com/rossdakin/">https://github.com/rossdakin</a>
+      </li>
+      <li>
+        <a href="https://twitter.com/rosssdakin">http://twitter.com/rosssdakin</a>
+      </li>
+      <li>
+        <a href="https://angel.co/rossdakin">https://angel.co/rossdakin</a>
+      </li>
+      <li>
+        <a href="https://dakin.nyc/">https://dakin.nyc</a>
+      </li>
+    </ul>
 
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+    <p>
+      Thanks for stopping by,
+      <br />
+      —Ross
+    </p>
+  </main>
 
-</div>
+</body>
+
+</html>
